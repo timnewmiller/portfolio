@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%%title%%</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P5GNT7G');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body, #formModal { font-family: "Montserrat", Arial, Helvetica, sans-serif; color:#6E6E6E;  }
+        a { color: #006A94; text-decoration: underline; text-underline-offset: 0.25rem; }
+        a:hover { color:#0a58ca; }
+
+        header { height:400px; overflow:hidden; background-color:#2F3A45; }
+        #hero-image {width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;}
+        .hero-image-shadow{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index:2;}
+        .contact-form{ background-color:#2F3A45; color:#F0F0F0; }
+
+        .btn-primary{ background-color: #006a94; border-color:#004a68; }
+        .btn-primary:hover { background-color: #004a68; border-color:#00202c; }
+        .card-text { font-size: 0.9rem; }
+
+        #app-notes { color:#0F0F0F; background:#929EAA; }
+        #app-notes .card { box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.3); }
+        #apps-container .card-text { font-size: 0.9rem; }
+        #apps-container .card-title { font-size:1.25rem; }
+        #apps-container .btn { font-size: 0.9rem; font-weight:700; }
+
+        #leco-features, .why-leco {color:#212529;}
+        #leco-features .card-title { font-size: 1.25rem; }
+        #leco-features .card-text { font-size: 0.9rem;}
+        #leco-features .card:hover {background:#FAFAFA;}
+
+        .scroll-wrap { position:relative; width:100%; padding: 0 40px; max-height: 500px; overflow: hidden; }
+        .product-scroll { display: flex; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; min-width:calc(100% + 1px); margin:0 -1rem;}
+        .product-card { flex: 0 0 auto; margin-right: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-align:center; font-size:0.9rem;}
+        
+        .product-card img { object-fit:cover; width:auto; max-width:100%; height:160px; border-radius:4px; margin:0 auto;}
+            img.two-by-two {object-fit:cover; max-width:200px; height:auto; }
+            img.three-up { height:160px; }
+        .product-card .card-body { text-align:left; margin:0 1rem 1rem;}
+        .product-card .card-title { font-size:1.25rem; }
+        .product-card .btn { font-size:0.9rem; font-weight:700; }
+
+        .optional img{max-width:100%;}
+
+        .scroll-arrow { position: absolute; top: 50%; transform: translateY(-50%); background-color:rgba(0, 0, 0, 0.5); color:#FFFFFF; border: none; padding:10px; cursor: pointer; z-index: 10; }
+        .scroll-arrow.left { left:0; }
+        .scroll-arrow.right { right:0; }
+
+        footer { background-color:#2F3A45; color:#F0F0F0; font-size: 0.8rem; letter-spacing: 1px;}
+        .footer-links a { color: #F0F0F0; }
+        .footer-links a:hover { color: #A8A8A8;}
+        .legal { font-size: 0.9em; }
+
+        #codedCampaignForm label{margin-bottom:0.2rem; font-size:0.9em; font-weight:700;letter-spacing:1px;color:#EDEDBB;}
+        #codedCampaignForm input{color:#2B2b2B; background:#FFFFFF; font-weight:700;}
+        #codedCampaignForm ::placeholder{ color:#757575; font-weight:400; }
+        #codedCampaignForm .form-check-input {height:1.45em; background:inherit;}
+        #codedCampaignForm .form-check-input:checked {background-color:#758592;}
+        #codedCampaignForm .form-check-input:checked::after {content: '\2714'; color: #000000; position:relative; left:-5px;}
+        #codedCampaignForm .form-check-label {display:inline-block;position:relative;top:-1.5em;color:#FFFFFF; font-weight:400;letter-spacing: 0;}
+        #codedCampaignForm textarea{margin-top:0;}
+        #codedCampaignForm .required::after {content: "*"; color: #00E4F5; margin-left: 0.25em;}
+
+        #codedModalForm label{ font-size:0.9em; margin-bottom:0; font-weight:700; letter-spacing:1px; color:#9D5825;}
+        #codedModalForm .form-check-input {height:1.45em; background:inherit; font-weight:700;}
+        #codedModalForm ::placeholder{color:#757575;font-weight:400;}
+        #codedModalForm .form-check-label {display:inline-block;position:relative;top:-1.5em; font-weight:400;letter-spacing: 0;}
+        #codedModalForm .required {color: #377686; margin-left: 0.25em;}
+
+
+        .float{ position:fixed; padding:1em 2em; bottom:0px; right:40px; background-color:#E6C700; color:#010057; text-decoration:none; border-radius:12px 12px 0px 0px; text-align:center; font-weight:700; box-shadow:2px 2px 3px #999; /*animation: topbounce 0.9s ease-in-out infinite alternate;*/}
+        .float:hover{background-color:#ebd233; color:#000000;}
+
+        @keyframes topbounce {
+            0% {transform: translateY(0);}
+            100% {transform: translateY(-15px);}
+        }
+
+        /* medium-width */
+        @media (min-width: 768px) { 
+            #campaign_info {column-count: 2; column-gap:20px;}
+         }
+        
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5GNT7G"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<!-- Hero & Heading -->
+
+<header class="hero position-relative">
+    <img src="https://placehold.co/2000x400" id="hero-image" pardot-region="hero_image" pardot-region-type="image" alt="image alt text"/>
+    <div class="hero-image-shadow"></div>
+    <div class="container h-100 d-flex align-items-center position-relative" style="z-index:3;">
+        <div class="row justify-content-center w-100">
+            <div class="col-12 col-md-10 col-lg-8 text-center d-flex flex-column" style="height:400px;">
+                <img src="https://go.leco.com/l/976543/2022-04-05/dpb/976543/1649179530sPtIAKr3/leco_white_logo_notag.png" alt="LECO Corporation" height="65" width="200" class="mb-auto mt-3 mx-auto"/>
+                <div id="campaign" style="height:auto;" class="pb-5">
+                    <h1 id="title" class="text-center text-white" pardot-region="title" pardot-region-type="simple">Primary Campaign Message</h1>
+                    <span id="subtitle" class="text-white" pardot-region="subtitle" pardot-region-type="simple">Secondary/Sub Message/Motto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <!-- Navigation -->
+    <section class="nav pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+                    <ul class="list-group list-group-horizontal-md w-100" id="navigation"></ul>
+                    <div id="navigation-editor" pardot-region="navigation-editor" pardot-region-type="html">
+                        <script>
+                            const navList = [
+                                {
+                                    title: "Applications",
+                                    link: "#app-notes"
+                                },
+                                {
+                                    title: "Benefits",
+                                    link: "#features"
+                                },
+                                {
+                                    title: "Optional",
+                                    link: "#optional"
+                                },
+                                {
+                                    title: "Instruments",
+                                    link: "#products"
+                                },
+                                {
+                                    title: "Request Quote",
+                                    link: "#footer"
+                                }
+                            ];
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign Intro -->
+    <section class="info py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 px-4 col-md-11 col-lg-8 text-left text-md-center">
+                    <div>
+                        <h2 pardot-region="introduction title" pardot-region-type="simple">Introduction to Campaign</h2>
+                        <div pardot-region="introduction" pardot-region-type="pardot" id="campaign_info" class="mt-4">
+                            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Mus lectus class metus inceptos nostra lectus sociosqu. Gravida rutrum litora facilisis congue molestie. Adipiscing commodo aptent sem posuere nullam. Orci tincidunt nulla a, fermentum risus quis vehicula. Lacus placerat ipsum diam torquent pulvinar condimentum penatibus morbi felis. Hendrerit arcu integer turpis erat nisl interdum. Duis curabitur penatibus primis eros senectus lectus enim neque duis. Sem ex sodales ad nostra tristique magnis.</p>
+                        
+                            <p>Urna ut maximus inceptos metus senectus blandit ad. Convallis dui integer cursus hac ante senectus penatibus per. Habitant eleifend celerisque libero vitae, diam potenti suspendisse placerat habitasse. Iaculis placerat felis ridiculus potenti ultricies potenti aliquet. Congue in ut suscipit aliquam risus lectus; maecenas vitae. Dui vestibulum maximus odio vestibulum ridiculus netus. Iaculis a facilisi accumsan ridiculus, natoque bibendum. Tristique per torquent neque tempus eget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Notes -->
+    <section class="app-notes py-5" id="app-notes">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-8 text-center mx-auto mt-3 mb-5">
+                    <div pardot-region="appNotes-heading" pardot-region-type="pardot">
+                        <h2>Application Notes Section</h2>
+                        <p>WYSIWYG editor for introduction to the campaign</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="apps-container">
+                <div id="app-notes-editor" pardot-region="app-notes-editor" pardot-region-type="html">
+                    <script>
+                        const appNotes = [
+                            {
+                                title: "App Note 1",
+                                description: "Description for App Note 1",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            },
+                            {
+                                title: "App Note 2",
+                                description: "Description for App Note 2",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            },
+                            {
+                                title: "App Note 3",
+                                description: "Description for App Note 3",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            },
+                            {
+                                title: "App Note 4",
+                                description: "Description for App Note 4",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            },
+                            {
+                                title: "App Note 5",
+                                description: "Description for App Note 5",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            },
+                            {
+                                title: "App Note 6",
+                                description: "Description for App Note 6",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            }
+                        ];
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why LECO? -->
+    <section class="why-leco py-5 mb-5" id="features">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center mb-5">
+                    <h2>Why Pick LECO?</h2>
+                    <div pardot-region="purpose" pardot-region-type="pardot">WYSIWYG editor for benefits of LECO</div>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center" id="leco-features">
+                <div id="features-editor" pardot-region="feature-list" pardot-region-type="html">
+                    <script>
+                        const featureList = [
+                            {
+                                title: "Accuracy",
+                                description: "Unmatched accuracy and precision in all applications.",
+                                imgSrc: "https://go.leco.com/l/976543/2024-11-20/6x4nq/976543/1732122614uR8bkJl4/accuracy_75.png"
+                            },
+                            {
+                                title: "Expertise",
+                                description: "Decades of industry expertise guiding our innovations.",
+                                imgSrc: "https://go.leco.com/l/976543/2024-11-20/6x4nt/976543/1732122614K0bhAh29/expertise_75.png"
+                            },
+                            {
+                                title: "Durability",
+                                description: "Built to last with high-quality materials and designs.",
+                                imgSrc: "https://go.leco.com/l/976543/2024-11-20/6x4nx/976543/1732122631QAyNO05T/durability_75.png"
+                            },
+                            {
+                                title: "Support",
+                                description: "Comprehensive customer support at every step.",
+                                imgSrc: "https://go.leco.com/l/976543/2024-11-20/6x4nm/976543/1732122614PvnErqz1/support_75.png"
+                            }   
+                        ];
+                    </script>
+                </div>            
+            </div>
+        </div>
+    </section>
+
+    <!-- Webinar/Other Content -->
+    <section class="optional bg-light py-5 mb-5" id="optional">
+        <div class="container my-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-7 col-lg-6 offset-md-1 order-md-1 order-2 pt-lg-5 pt-md-2 pt-4 pe-md-5 px-4">
+                    <div pardot-region="webinar-text" pardot-region-type="pardot">
+                        <h2>Campaign Webinar, Video, Something Else</h2>
+                        <p>WYSIWYG editor for something-else to the campaign</p>
+                        <a href="https://www.google.com" class="btn btn-secondary locked">Access the webinar</a>
+                    </div>
+                </div>
+                <div class="col-10 col-md-4 col-lg-5 order-md-2 order-1">
+                    <img pardot-region="webinar-image" pardot-region-type="image" class="rounded rounded-3" src="https://placehold.co/550x400" alt="alt-text" width="550" height="auto"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Carousel -->
+    <section class="products py-5" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 px-4">
+                    <div pardot-region="products-heading" pardot-region-type="pardot">
+                        <h2 class="text-center mb-4">Our Products</h2>
+                        <p>intro text for products</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-wrap">
+                <button class="scroll-arrow left">&lt;</button>
+                <div class="product-scroll pb-3 mb-5" id="productScroll">
+                    <div id="products-editor" pardot-region="product-list" pardot-region-type="html">
+                        <script>
+                            const productList = [
+                        {
+                            title: "Product Name 1",
+                            description: "Description for Product",
+                            imgSrc: "https://placehold.co/315x160",
+                            link: "#"
+                        },
+                        {
+                            title: "Product Name 2",
+                            description: "Description for Product",
+                            imgSrc: "https://placehold.co/315x160",
+                            link: "#"
+                        },
+                        {
+                            title: "Product Name 3",
+                            description: "Description for Product",
+                            imgSrc: "https://placehold.co/315x160",
+                            link: "#"
+                        },
+                        {
+                            title: "Product Name 4",
+                            description: "Description for Product",
+                            imgSrc: "https://placehold.co/315x160",
+                            link: "#"
+                        }
+                        
+                    ];
+                        </script>
+                    </div> 
+                </div>
+                <button class="scroll-arrow right" style="width:2em;right:0;">&gt;</button>
+            </div>
+            <script>
+                const scrollContainer = document.querySelector('.product-scroll');
+                const leftArrow = document.querySelector('.scroll-arrow.left');
+                const rightArrow = document.querySelector('.scroll-arrow.right');
+        
+                scrollContainer.addEventListener('wheel', (evt) => {
+                    evt.preventDefault();
+                    scrollContainer.scrollLeft += evt.deltaY;
+                });
+                            
+                leftArrow.addEventListener('click', () => { 
+                    scrollContainer.scrollBy({ left: -300, behavior: 'smooth' }); 
+                });
+        
+                rightArrow.addEventListener('click', () => { 
+                    scrollContainer.scrollBy({ left: 300, behavior: 'smooth' }); 
+                });
+            </script>
+        </div>
+    </section>
+</main>
+
+<footer class="pt-5" style="background-color:#2F3A45;" id="footer">
+    <!-- Contact Form -->
+    <section class="container contact-form py-5">
+            <div class="row">
+                <div class="col-12 col-md-9 col-xl-6 mx-auto">
+                    <h2 class="text-center mb-4" pardot-region="contact-footer" pardot-region-type="simple">Request a Quote</h2>
+                    <div class="mb-4" pardot-region="contact-footer-info" pardot-region-type="basic"><p style="text-align:center;">Text explaining the purpose of the form, or one last call to action. Regarding the form: that is displayed within a pardot html field.</p></div>
+                </div>
+                <div class="col-10 mx-auto pt-3">
+                    <div id="contact-form-url" pardot-region="campaign-form-handler-url" pardot-region-type="html">
+                        <script>
+                            const formLink = "https://go.leco.com/l/976543/2024-12-02/6ypmq";
+                        </script>
+                    </div>
+                    <form class="container" method="post" id="codedCampaignForm" autocomplete="on">
+                        <div class="row g-5 pt-5">
+                            <div class="col-xl-6 mt-1">
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="firstName" class="form-label"><span class="required">First Name</span></label>
+                                        <input type="text" class="form-control" name="firstName" id="firstName"  aria-label="First name" required aria-required="true" autocomplete="given-name">
+                                    </div>
+                                    <div class="col">
+                                        <label for="lastName" class="form-label"><span class="required">Surname</span></label>
+                                        <input type="text" class="form-control" name="lastName" id="lastName"  aria-label="Last name" required aria-required="true" autocomplete="family-name">
+                                    </div>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="email" class="form-label"><span class="required">Email address</span></label>
+                                        <input type="email" class="form-control" name="email" id="email" aria-label="Email address" required aria-required="true" autocomplete="email">
+                                    </div>
+                                    <div class="col">
+                                        <label for="telephone" class="form-label">Telephone</label>
+                                        <input type="tel" class="form-control" name="telephone" id="telephone" aria-label="Telephone Number" autocomplete="tel">
+                                    </div>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-12">
+                                        <label for="street" class="form-label">Street address</label>
+                                        <input type="text" class="form-control" name="street" id="street" aria-label="Street address" autocomplete="street-address">
+                                    </div>
+                                    <div class="col">
+                                        <label for="country" class="form-label"><span class="required">Country</span></label>
+                                        <select class="form-select" name="country" id="country" aria-label="Purchase Intent Selection" required aria-required="true" autocomplete="country-name">
+                                            <option selected>Please specify&hellip;</option>
+                                            <option>United States</option>
+                                            <option>Canada</option>
+                                            <option>Afghanistan</option>
+                                            <option>Aland Islands</option>
+                                            <option>Albania</option>
+                                            <option>Algeria</option>
+                                            <option>American Samoa</option>
+                                            <option>Andorra</option>
+                                            <option>Angola</option>
+                                            <option>Anguilla</option>
+                                            <option>Antarctica</option>
+                                            <option>Antigua and Barbuda</option>
+                                            <option>Argentina</option>
+                                            <option>Armenia</option>
+                                            <option>Aruba</option>
+                                            <option>Australia</option>
+                                            <option>Austria</option>
+                                            <option>Azerbaijan</option>
+                                            <option>Bahamas</option>
+                                            <option>Bahrain</option>
+                                            <option>Bangladesh</option>
+                                            <option>Barbados</option>
+                                            <option>Belarus</option>
+                                            <option>Belgium</option>
+                                            <option>Belize</option>
+                                            <option>Benin</option>
+                                            <option>Bermuda</option>
+                                            <option>Bhutan</option>
+                                            <option>Bolivia</option>
+                                            <option>Bonaire, Sint Eustatius and Saba</option>
+                                            <option>Bosnia and Herzegovina</option>
+                                            <option>Botswana</option>
+                                            <option>Bouvet Island</option>
+                                            <option>Brazil</option>
+                                            <option>British Indian Ocean Territory</option>
+                                            <option>British Virgin Islands</option>
+                                            <option>Brunei Darussalam</option>
+                                            <option>Bulgaria</option>
+                                            <option>Burkina Faso</option>
+                                            <option>Burundi</option>
+                                            <option>Cambodia</option>
+                                            <option>Cameroon</option>
+                                            <option>Cape Verde</option>
+                                            <option>Cayman Islands</option>
+                                            <option>Central African Republic</option>
+                                            <option>Chad</option>
+                                            <option>Chile</option>
+                                            <option>China</option>
+                                            <option>Christmas Island</option>
+                                            <option>Cocos (Keeling) Islands</option>
+                                            <option>Colombia</option>
+                                            <option>Comoros</option>
+                                            <option>Congo</option>
+                                            <option>Congo, the Democratic Republic of the</option>
+                                            <option>Cook Islands</option>
+                                            <option>Costa Rica</option>
+                                            <option>Cote d'Ivoire</option>
+                                            <option>Croatia</option>
+                                            <option>Cuba</option>
+                                            <option>Curaçao</option>
+                                            <option>Cyprus</option>
+                                            <option>Czech Republic</option>
+                                            <option>Denmark</option>
+                                            <option>Djibouti</option>
+                                            <option>Dominica</option>
+                                            <option>Dominican Republic</option>
+                                            <option>Ecuador</option>
+                                            <option>Egypt</option>
+                                            <option>El Salvador</option>
+                                            <option>Equatorial Guinea</option>
+                                            <option>Eritrea</option>
+                                            <option>Estonia</option>
+                                            <option>Ethiopia</option>
+                                            <option>Falkland Islands (Malvinas)</option>
+                                            <option>Faroe Islands</option>
+                                            <option>Federated Micronesia</option>
+                                            <option>Fiji</option>
+                                            <option>Finland</option>
+                                            <option>France</option>
+                                            <option>French Guiana</option>
+                                            <option>French Polynesia</option>
+                                            <option>French Southern Territories</option>
+                                            <option>Gabon</option>
+                                            <option>Gambia</option>
+                                            <option>Georgia</option>
+                                            <option>Germany</option>
+                                            <option>Ghana</option>
+                                            <option>Gibraltar</option>
+                                            <option>Greece</option>
+                                            <option>Greenland</option>
+                                            <option>Grenada</option>
+                                            <option>Guadeloupe</option>
+                                            <option>Guam</option>
+                                            <option>Guatemala</option>
+                                            <option>Guernsey</option>
+                                            <option>Guinea</option>
+                                            <option>Guinea-Bissau</option>
+                                            <option>Guyana</option>
+                                            <option>Haiti</option>
+                                            <option>Honduras</option>
+                                            <option>Heard Island and McDonald Islands</option>
+                                            <option>Holy See (Vatican City State)</option>
+                                            <option>Honduras</option>
+                                            <option>Hungary</option>
+                                            <option>Iceland</option>
+                                            <option>India</option>
+                                            <option>Indonesia</option>
+                                            <option>Iran</option>
+                                            <option>Iraq</option>
+                                            <option>Ireland</option>
+                                            <option>Isle of Man</option>
+                                            <option>Israel</option>
+                                            <option>Italy</option>
+                                            <option>Jamaica</option>
+                                            <option>Japan</option>
+                                            <option>Jersey</option>
+                                            <option>Jordan</option>
+                                            <option>Kazakhstan</option>
+                                            <option>Kenya</option>
+                                            <option>Kiribati</option>
+                                            <option>Korea, Democratic People's Republic of</option>
+                                            <option>Kuwait</option>
+                                            <option>Kyrgyzstan</option>
+                                            <option>Laos</option>
+                                            <option>Latvia</option>
+                                            <option>Lebanon</option>
+                                            <option>Lesotho</option>
+                                            <option>Liberia</option>
+                                            <option>Libya</option>
+                                            <option>Liechtenstein</option>
+                                            <option>Lithuania</option>
+                                            <option>Luxembourg</option>
+                                            <option>Macao</option>
+                                            <option>Macedonia</option>
+                                            <option>Madagascar</option>
+                                            <option>Malawi</option>
+                                            <option>Malaysia</option>
+                                            <option>Maldives</option>
+                                            <option>Mali</option>
+                                            <option>Malta</option>
+                                            <option>Marshall Islands</option>
+                                            <option>Martinique</option>
+                                            <option>Mauritania</option>
+                                            <option>Mauritius</option>
+                                            <option>Mayotte</option>
+                                            <option>Mexico</option>
+                                            <option>Micronesia</option>
+                                            <option>Moldova</option>
+                                            <option>Monaco</option>
+                                            <option>Mongolia</option>
+                                            <option>Montenegro</option>
+                                            <option>Montserrat</option>
+                                            <option>Morocco</option>
+                                            <option>Mozambique</option>
+                                            <option>Myanmar</option>
+                                            <option>Namibia</option>
+                                            <option>Nauru</option>
+                                            <option>Nepal</option>
+                                            <option>Netherlands</option>
+                                            <option>New Caledonia</option>
+                                            <option>New Zealand</option>
+                                            <option>Nicaragua</option>
+                                            <option>Niger</option>
+                                            <option>Nigeria</option>
+                                            <option>Niue</option>
+                                            <option>Norfolk Island</option>
+                                            <option>Northern Mariana Islands</option>
+                                            <option>Norway</option>
+                                            <option>Oman</option>
+                                            <option>Pakistan</option>
+                                            <option>Palau</option>
+                                            <option>Palestinian Territory, Occupied</option>
+                                            <option>Panama</option>
+                                            <option>Papua New Guinea</option>
+                                            <option>Paraguay</option>
+                                            <option>Peru</option>
+                                            <option>Philippines</option>
+                                            <option>Pitcairn</option>
+                                            <option>Poland</option>
+                                            <option>Portugal</option>
+                                            <option>Puerto Rico</option>
+                                            <option>Qatar</option>
+                                            <option>Reunion</option>
+                                            <option>Romania</option>
+                                            <option>Russia</option>
+                                            <option>Rwanda</option>
+                                            <option>Saint Barthélemy</option>
+                                            <option>Saint Helena, Ascension and Tristan da Cunha</option>
+                                            <option>Saint Kitts and Nevis</option>
+                                            <option>Saint Lucia</option>
+                                            <option>Saint Martin (French part)</option>
+                                            <option>Saint Pierre and Miquelon</option>
+                                            <option>Saint Vincent and the Grenadines</option>
+                                            <option>Samoa</option>
+                                            <option>San Marino</option>
+                                            <option>Sao Tome and Principe</option>
+                                            <option>Saudi Arabia</option>
+                                            <option>Senegal</option>
+                                            <option>Serbia</option>
+                                            <option>Seychelles</option>
+                                            <option>Sierra Leone</option>
+                                            <option>Singapore</option>
+                                            <option>Sint Maarten (Dutch part)</option>
+                                            <option>Slovakia</option>
+                                            <option>Slovenia</option>
+                                            <option>Solomon Islands</option>
+                                            <option>Somalia</option>
+                                            <option>South Africa</option>
+                                            <option>South Georgia and the South Sandwich Islands</option>
+                                            <option>South Korea</option>
+                                            <option>South Sudan</option>
+                                            <option>Spain</option>
+                                            <option>Sri Lanka</option>
+                                            <option>Sudan</option>
+                                            <option>Suriname</option>
+                                            <option>Svalbard and Jan Mayen</option>
+                                            <option>Swaziland</option>
+                                            <option>Sweden</option>
+                                            <option>Switzerland</option>
+                                            <option>Syrian Arab Republic</option>
+                                            <option>Taiwan</option>
+                                            <option>Tajikistan</option>
+                                            <option>Tanzania</option>
+                                            <option>Thailand</option>
+                                            <option>Timor-Leste</option>
+                                            <option>Togo</option>
+                                            <option>Tokelau</option>
+                                            <option>Tonga</option>
+                                            <option>Trinidad and Tobago</option>
+                                            <option>Tunisia</option>
+                                            <option>Turkey</option>
+                                            <option>Turkmenistan</option>
+                                            <option>Turks and Caicos Islands</option>
+                                            <option>Tuvalu</option>
+                                            <option>U.S. Virgin Islands</option>
+                                            <option>Uganda</option>
+                                            <option>Ukraine</option>
+                                            <option>United Arab Emirates</option>
+                                            <option>United Kingdom</option>
+                                            <option>United States Minor Outlying Islands</option>
+                                            <option>Uruguay</option>
+                                            <option>Uzbekistan</option>
+                                            <option>Vanuatu</option>
+                                            <option>Venezuela</option>
+                                            <option>Viet Nam</option>
+                                            <option>Virgin Islands, British</option>
+                                            <option>Virgin Islands, US</option>
+                                            <option>Wallis and Futuna</option>
+                                            <option>Western Sahara</option>
+                                            <option>Western Samoa</option>
+                                            <option>Yemen</option>
+                                            <option>Zambia</option>
+                                            <option>Zimbabwe</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="postCode" class="form-label"><span class="required">Postal code</span></label>
+                                        <input type="text" class="form-control" name="postcode" id="postCode"  aria-label="Postal or ZIP code" required aria-required="true" autocomplete="postal-code">
+                                    </div>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" name="city" id="city" aria-label="City" autocomplete="address-level2">
+                                    </div>
+                                    <div class="col">
+                                        <label for="state" class="form-label">State or Province</label>
+                                        <input type="text" class="form-control" name="state" id="state" aria-label="State or Province" autocomplete="address-level1">
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="col-xl-6 mt-1">
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="urgency" class="form-label"><span class="required">Purchase Intent</span></label>
+                                        <select class="form-select" name="intent" id="urgency" aria-label="Purchase Intent Selection" required aria-required="true">
+                                            <option selected>Please specify&hellip;</option>
+                                            <option value="Learning">Expanding my knowledge</option>
+                                            <option value="Researching">Investigating technologies for my applications</option>
+                                            <option value="Interested">Starting the buying process within one year </option>
+                                            <option value="Purchasing">Actively in the buying process</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="requestQuoteContent" class="form-label">Details or Comments</label>
+                                        <textarea class="form-control" name="comments" id="requestQuoteContent" rows="5"></textarea>
+                                    </div>
+                                </div>  
+                                <div class="row form-check ms-2 mt-3">
+                                    <input class="form-check-input" name="marketing" type="checkbox" value="" id="gdprOption" >
+                                    <label class="form-check-label" for="gdprOption" style="font-size:0.9em;line-height:1.2em;">I agree to the collection, processing, and use of my personal data by LECO (and its subsidiaries) to receive product information, news, and updates.</label>
+                                </div>
+                                <p style="font-size:12px;" class="text-white m-0"><span class="required"></span> indicates a required field.</p>
+                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const form = document.getElementById('codedCampaignForm');
+                    const formLinkElement = document.getElementById('contact-form-url');
+                    if (formLinkElement && formLinkElement.querySelector('script')) {
+                        const formLinkScript = formLinkElement.querySelector('script');
+                        eval(formLinkScript.textContent);
+                        if (typeof formLink !== 'undefined') {
+                            form.action = formLink;
+                        }
+                    }
+                });
+            </script>
+    </section>
+    <div class="container">
+        <div class="row flex-column">
+            <div class="col-12 col-md-9 col-lg-6 mx-auto border-top border-white border-2 pt-3 text-center">
+                <p class="footer-links" pardot-region="footer-links" pardot-region-type="simple"><a href="https://www.leco.com/privacy/" title="LECO Privacy Policy" target="_blank">Privacy Policy</a> | <a href="https://www.leco.com/legal/site-use/" title="LECO Terms of Use" target="_blank">Terms of Use</a> | <a href="https://www.leco.com/careers/" title="Work for LECO" target="_blank">Careers</a></p>
+            </div>
+            <div class="col-12 col-md-9 col-lg-6 mx-auto text-center">
+                <p class="legal">&copy; <a href="https://www.leco.com" title="LECO Corporation Website" style="text-decoration:none;color:#FFFFFF;">LECO Corporation</a>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#footer" class="float"><i class="bi bi-chat-dots-fill"></i> Request a Quote</a>
+
+    <div id="formModal" class="modal fade" tab-index="-1">
+        <div id="formContainer" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header px-2 py-2">
+                    <h2 class="modal-title h6 pt-1">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </h2>
+                </div>
+                <div class="modal-body py-2">
+                    <h2 class="h6">To access the content, please submit this form:</h2>
+                    %%content%%
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script>
+    function renderNavList() {
+        const container = document.getElementById('navigation');
+        
+        navList.forEach(link => {
+            const navItem = document.createElement('li');
+            navItem.className = 'list-group-item flex-fill';
+
+            const navLink = document.createElement('a');
+            navLink.href = link.link;
+            navLink.textContent = link.title;
+
+            navItem.appendChild(navLink);
+            
+            container.appendChild(navItem);
+        });
+    }
+
+    function renderAppsCards() {
+        const container = document.getElementById('apps-container');
+        
+        appNotes.forEach(note => {
+            const cardCol = document.createElement('div');
+            cardCol.className = 'col-md-4 col-sm-6 col-12 mb-4';
+
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const img = document.createElement('img');
+            img.src = note.imgSrc;
+            img.className = 'card-img-top';
+            img.alt = note.title;
+
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            const cardTitle = document.createElement('h3');
+            cardTitle.className = 'card-title';
+            cardTitle.textContent = note.title;
+
+            const cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.textContent = note.description;
+
+            const learnMoreBtn = document.createElement('a');
+            learnMoreBtn.href = '#';
+            learnMoreBtn.className = 'btn btn-secondary modal-opener locked';
+            learnMoreBtn.setAttribute('data-bs-toggle', 'modal');
+            learnMoreBtn.setAttribute('data-bs-target', '#formModal');
+            learnMoreBtn.setAttribute('data-original-url', note.link);
+            learnMoreBtn.textContent = 'Learn More';
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            cardBody.appendChild(learnMoreBtn);
+            
+            card.appendChild(img);
+            card.appendChild(cardBody);
+            
+            cardCol.appendChild(card);
+            
+            container.appendChild(cardCol);
+        });
+    }
+
+    function renderProductCards() {
+        const container = document.getElementById('productScroll');
+        const productCount = productList.length;
+
+        let columnClass = productCount === 1 ? 'd-flex' :
+                          productCount === 2 ? 'col-md-6 d-flex' :
+                          productCount === 3 ? 'col-md-4 col-sm-6' :
+                          'col-lg-3 col-md-4 col-sm-6';
+
+        let imageClass = productCount <= 2 ? 'two-by-two' : 'three-up';
+
+        productList.forEach(product => {
+            const card = document.createElement('div');
+            card.className = `product-card ${columnClass} col-12`;
+
+            const img = document.createElement('img');
+            img.src = product.imgSrc;
+            img.className = `card-img-top ${imageClass}`;
+            img.alt = product.title;
+
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            const cardTitle = document.createElement('h3');
+            cardTitle.className = 'card-title mt-3';
+            cardTitle.textContent = product.title;
+
+            const cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.textContent = product.description;
+
+            const viewProduct = document.createElement('a');
+            viewProduct.href = product.link;
+            viewProduct.className = 'btn btn-primary';
+            viewProduct.textContent = 'Explore Product';
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            cardBody.appendChild(viewProduct);
+
+            card.appendChild(img);
+            card.appendChild(cardBody);
+
+            container.appendChild(card);
+        });
+    }
+
+    function renderFeatureCards() {
+        const container = document.getElementById('leco-features');
+        
+        featureList.forEach(note => {
+            const cardCol = document.createElement('div');
+            cardCol.className = 'col-lg-3 col-md-6 col-12 mb-4';
+
+            const card = document.createElement('div');
+            card.className = 'card p-3';
+
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            const img = document.createElement('img');
+            img.src = note.imgSrc;
+            img.className = 'my-3 mx-auto';
+            img.alt = note.title + ' icon';
+            img.setAttribute = ('role','presentation');
+            img.width = 75;
+            img.height = 75;
+
+            const cardTitle = document.createElement('h3');
+            cardTitle.className = 'card-title';
+            cardTitle.textContent = note.title;
+
+            const cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.textContent = note.description;
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            
+            card.appendChild(img);
+            card.appendChild(cardBody);
+            
+            cardCol.appendChild(card);
+            
+            container.appendChild(cardCol);
+        });
+    }
+
+    function lockButton(button) {
+        let originalUrl = button.getAttribute('data-original-url');
+        if (!originalUrl || originalUrl === '#') {
+            originalUrl = button.getAttribute('href');
+        }
+        button.setAttribute('data-original-url', originalUrl);
+        button.setAttribute('href','#');
+        button.setAttribute('data-bs-toggle', 'modal');
+        button.setAttribute('data-bs-target', '#formModal');
+        
+        button.classList.remove('available', 'btn-primary');
+        button.classList.add('modal-opener', 'btn-secondary');
+
+        if(button.textContent.trim() === 'Access document') {
+            button.textContent = 'Learn More';
+        }
+    }
+
+    function lockDocuments(selector = '.available, .locked') {
+        const userButtons = document.querySelectorAll(selector);
+        userButtons.forEach(lockButton);
+    }
+
+    function unlockDocuments() {
+        document.querySelectorAll('.modal-opener').forEach(button =>{
+            const originalUrl = button.getAttribute('data-original-url');
+            if (originalUrl && originalUrl !== '#') {
+                button.href = originalUrl;
+                button.removeAttribute('data-bs-toggle');
+                button.removeAttribute('data-bs-target');
+                button.classList.remove('modal-opener', 'btn-secondary');
+                button.classList.add('available', 'btn-primary');
+
+                if(button.textContent.trim() === 'Learn More') {
+                    button.textContent = 'Access document';
+                } 
+            }           
+        });
+    }
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function initializeDocumentAccess() {
+        if (getCookie('accessCampaignDocs')) {
+            unlockDocuments();
+        } else {
+            lockDocuments();
+        }
+    }
+
+    function handleFormSubmissionSuccess() {
+        setCookie('accessCampaignDocs', 'true', 1);
+        unlockDocuments();
+    }
+
+    // Modal and Form Handling
+    document.addEventListener('DOMContentLoaded', function() {
+        renderNavList();
+        renderProductCards();
+        renderFeatureCards();      
+        renderAppsCards();
+        lockDocuments('.locked');
+
+        initializeDocumentAccess(); 
+
+        const formModal = document.getElementById('formModal');
+        formModal.addEventListener('hidden.bs.modal', cleanupModal);
+    });
+
+    document.getElementById('formModal').addEventListener('show.bs.modal', function () {
+        document.querySelector('main').setAttribute('inert', '');
+    });
+   
+    document.getElementById('formModal').addEventListener('hidden.bs.modal', function () {
+        document.querySelector('main').removeAttribute('inert');
+    });
+
+    document.getElementById('pardot-form').addEventListener('submit',function(e) {
+        e.preventDefault();
+        const pdotform = this;
+        const pdotformData = new FormData(pdotform);
+
+        fetch(pdotform.action, {
+            method: 'POST',
+            body: pdotformData
+        }).then(response => {
+            if (response.ok) {
+                setCookie('accessCampaignDocs', 'true', 1);
+                handleFormSubmissionSuccess();
+                bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    function cleanupModal() {
+        document.body.classList.remove('modal-open');
+        document.body.removeAttribute('data-bs-overflow');
+        document.body.removeAttribute('data-bs-padding-right');
+        document.body.removeAttribute('aria-hidden');
+        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('padding-right');
+        document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+    }
+
+    function removeCookie() {
+        Cookies.remove('documentsUnlocked', { path: '/' });
+        Cookies.remove('doalittledance', { path: '/' });
+        Cookies.remove('accessCampaignDocs', { path: '/' });
+        lockDocuments();
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!--<a href="#" onclick="removeCookie()">Remove Cookie</a>-->
+
+</body>
+</html>
