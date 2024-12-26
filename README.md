@@ -2,7 +2,7 @@
 
 Please explore code examples.
 
-- "Campaign-Template"
+- "<a href="campaign-template.html">Marketing Campaign Template</a>"
 
 
 ## Campaign Template
