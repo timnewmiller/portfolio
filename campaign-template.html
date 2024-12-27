@@ -26,8 +26,8 @@
             <div class="col-12 col-md-10 col-lg-8 text-center d-flex flex-column" style="height:400px;">
                 <img src="https://placehold.co/200x65" alt="Company Logo" height="65" width="200" class="mb-auto mt-3 mx-auto"/>
                 <div id="campaign" style="height:auto;" class="pb-5">
-                    <h1 id="title" class="text-center text-white" pardot-region="title" pardot-region-type="simple">Primary Campaign Message</h1>
-                    <span id="subtitle" class="text-white" pardot-region="subtitle" pardot-region-type="simple">Secondary/Sub Message/Motto</span>
+                    <h1 id="title" class="text-center text-white" pardot-region="title" pardot-region-type="simple">Corporate Campaign Heading Message</h1>
+                    <span id="subtitle" class="text-white" pardot-region="subtitle" pardot-region-type="simple">Sub-title or secondary message</span>
                 </div>
             </div>
         </div>
@@ -45,10 +45,10 @@
                             const navList = [
                                 {
                                     title: "Applications",
-                                    link: "#app-notes"
+                                    link: "#applications"
                                 },
                                 {
-                                    title: "Benefits",
+                                    title: "Features",
                                     link: "#features"
                                 },
                                 {
@@ -56,7 +56,7 @@
                                     link: "#webinar"
                                 },
                                 {
-                                    title: "Instruments",
+                                    title: "Products",
                                     link: "#products"
                                 },
                                 {
@@ -77,11 +77,10 @@
             <div class="row justify-content-center">
                 <div class="col-12 px-4 col-md-11 col-lg-8 text-left text-md-center">
                     <div>
-                        <h2 pardot-region="introduction title" pardot-region-type="simple">Introduction to Campaign</h2>
+                        <h2 pardot-region="introduction title" pardot-region-type="simple">Introduction to this template <pre>simple text field region</pre></h2>
                         <div pardot-region="introduction" pardot-region-type="pardot" id="campaign_info" class="mt-4">
-                            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Mus lectus class metus inceptos nostra lectus sociosqu. Gravida rutrum litora facilisis congue molestie. Adipiscing commodo aptent sem posuere nullam. Orci tincidunt nulla a, fermentum risus quis vehicula. Lacus placerat ipsum diam torquent pulvinar condimentum penatibus morbi felis. Hendrerit arcu integer turpis erat nisl interdum. Duis curabitur penatibus primis eros senectus lectus enim neque duis. Sem ex sodales ad nostra tristique magnis.</p>
-                        
-                            <p>Urna ut maximus inceptos metus senectus blandit ad. Convallis dui integer cursus hac ante senectus penatibus per. Habitant eleifend celerisque libero vitae, diam potenti suspendisse placerat habitasse. Iaculis placerat felis ridiculus potenti ultricies potenti aliquet. Congue in ut suscipit aliquam risus lectus; maecenas vitae. Dui vestibulum maximus odio vestibulum ridiculus netus. Iaculis a facilisi accumsan ridiculus, natoque bibendum. Tristique per torquent neque tempus eget.</p>
+                            <pre>wysiwyg region</pre>
+                            <p>This layout was built using HTML, CSS, and JavaScript, for integration into Salesforce Account Engagement (AE). AE (or Pardot) field types were implemented to allow in-editor content management and template reuse. When active in AE, this can also integrates with the landing page's form. Each application link starts 'restricted', asking visitors to submit the corporation's requested lead generation form via a pop-up modal. Upon successful form submission, Javascript allows content engagement. While originally built to incorporate javascript via code blocks to allow easy addition of repeatable elements, in reality this was not feasible and those were switched to utilizing HTML regions instead.</p>
                         </div>
                     </div>
                 </div>
@@ -90,13 +89,21 @@
     </section>
 
     <!-- App Notes -->
-    <section class="app-notes py-5" id="app-notes">
+    <section class="app-notes py-5" id="applications">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-10 col-lg-8 text-center mx-auto mt-3 mb-5">
                     <div pardot-region="appNotes-heading" pardot-region-type="pardot">
-                        <h2>Application Notes Section</h2>
-                        <p>WYSIWYG editor for introduction to the campaign</p>
+                        <h2>Application Section</h2>
+                        <p>Cards utilized to feature application notes - demonstrations of the products' capabilities in real-world scenarios. While this text would be controlled by a wysiwyg region, there is also an additional editing block of type 'html' that would allow modification of javascript for easier output.</p>
+                        <p>Each of these cards require a form to be submitted prior to the destination URL being made accessible. The form is intended to be the default Account Engagement form for the landing page - represented by </pre>%%content%%</pre> in the template.</p>
+                        <pre> {
+                                title: "App Note 1",
+                                description: "Description for App Note 1",
+                                imgSrc: "https://placehold.co/415x150",
+                                link: "https://www.google.com"
+                            },
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -151,33 +158,40 @@
     <section class="why-leco py-5 mb-5" id="features">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8 text-center mb-5">
-                    <h2>Why Pick Company?</h2>
-                    <div pardot-region="purpose" pardot-region-type="pardot">WYSIWYG editor for unique selling propositions</div>
+                <div class="col-12 col-md-10 col-lg-8 text-center mb-5" pardot-region="purpose" pardot-region-type="pardot">
+                    <h2>Why Pick this Company?</h2>
+                    <p>This is another wysiwyg region, allowing for content to overview the hightlighted features, benefits, or unique selling propositions below. An additional HTML region would allow further javascript interaction. Implementation of JavaScript intended to provide easier method for non-coding individuals to add multiple, repeatable elements in an environment that does not allow database integration. </div>
+                    <pre>
+                      {
+                            title: "Accuracy",
+                            description: "Short statement about accuracy",
+                            imgSrc: "https://timranosaur.us/timmy/inc/accuracy_75.png"
+                        },
+                    </pre>
                 </div>
             </div>
-            <div class="row justify-content-center text-center" id="leco-features">
+            <div class="row justify-content-center text-center" id="features">
                 <div id="features-editor" pardot-region="feature-list" pardot-region-type="html">
                     <script>
                         const featureList = [
                             {
-                                title: "USP Identifier 1",
-                                description: "Short statement about this USP",
+                                title: "Accuracy",
+                                description: "Short statement about accuracy",
                                 imgSrc: "https://timranosaur.us/timmy/inc/accuracy_75.png"
                             },
                             {
-                                title: "USP Identifier 2",
-                                description: "Short statement about this USP",
+                                title: "Expertise",
+                                description: "Short statement about expertise",
                                 imgSrc: "https://timranosaur.us/timmy/inc/expertise_75.png"
                             },
                             {
-                                title: "USP Identifier 3",
-                                description: "Short statement about this USP",
+                                title: "Durability",
+                                description: "Short statement about durability",
                                 imgSrc: "https://timranosaur.us/timmy/inc/durability_75.png"
                             },
                             {
-                                title: "USP Identifier 4",
-                                description: "Short statement about this USP",
+                                title: "Support",
+                                description: "Short statement about support",
                                 imgSrc: "https://timranosaur.us/timmy/inc/support_75.png"
                             }   
                         ];
@@ -193,8 +207,8 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-7 col-lg-6 offset-md-1 order-md-1 order-2 pt-lg-5 pt-md-2 pt-4 pe-md-5 px-4">
                     <div pardot-region="webinar-text" pardot-region-type="pardot">
-                        <h2>Webinar Tease Content</h2>
-                        <p>WYSIWYG editor for optional campaign content. Content-type not specified, but layout provided for ease of generation.</p>
+                        <h2>Webinar Teaser Content</h2>
+                        <p>This is another wysiwyg section that allows for modification of heading, content, and the below button. This button features class "unlocked" - which will allow users to access the destination without a prior form submission.</p>
                         <a href="campaign-webinar.html" class="btn btn-secondary unlocked">Access this content</a>
                     </div>
                 </div>
@@ -212,7 +226,16 @@
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 px-4">
                     <div pardot-region="products-heading" pardot-region-type="pardot">
                         <h2 class="text-center mb-4">Products Scroll</h2>
-                        <p>WYSIWYG editor to add information about the products listed below.</p>
+                        <p>This wysiwyg region allows information about products of interest to be added. What ties them together? What purpose do they serve? What makes them better? Answering these questions and similar was the motivation behind adding this section.</p>
+                        <p>Once again, an HTML region allows for editing javascript, for easy manipulation of product cards and to add additions with low-code experience.</p>
+                        <pre>
+                            {
+                                title: "Product Name",
+                                description: "Description for Product",
+                                imgSrc: "https://placehold.co/315x160",
+                                link: "#"
+                            },
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -220,30 +243,30 @@
             <div class="scroll-wrap">
                 <button class="scroll-arrow left">&lt;</button>
                 <div class="product-scroll pb-3 mb-5" id="productScroll">
-                    <div id="products-editor" pardot-region="product-list" pardot-region-type="html">
+                    <div id="products-region" pardot-region="product-list" pardot-region-type="html">
                         <script>
                             const productList = [
                         {
-                            title: "Product Name 1",
-                            description: "Description for Product",
+                            title: "Product Identifier",
+                            description: "Description for this Product",
                             imgSrc: "https://placehold.co/315x160",
                             link: "#"
                         },
                         {
-                            title: "Product Name 2",
-                            description: "Description for Product",
+                            title: "Second Product Identifier",
+                            description: "Description for this product",
                             imgSrc: "https://placehold.co/315x160",
                             link: "#"
                         },
                         {
-                            title: "Product Name 3",
-                            description: "Description for Product",
+                            title: "Third product identifier",
+                            description: "Description for this Product",
                             imgSrc: "https://placehold.co/315x160",
                             link: "#"
                         },
                         {
-                            title: "Product Name 4",
-                            description: "Description for Product",
+                            title: "Fourth product identifier",
+                            description: "Description for this Product",
                             imgSrc: "https://placehold.co/315x160",
                             link: "#"
                         }
@@ -282,7 +305,7 @@
             <div class="row">
                 <div class="col-12 col-md-9 col-xl-6 mx-auto">
                     <h2 class="text-center mb-4" pardot-region="contact-footer" pardot-region-type="simple">Request a Quote</h2>
-                    <div class="mb-4" pardot-region="contact-footer-info" pardot-region-type="basic"><p style="text-align:center;">Text explaining the purpose of the form, or one last call to action. This form requires an Account Engagement Form Handler, which would be placed inside the "campaign-form-handler-url" editor region. Currently, the action defaults to "#".</p></div>
+                    <div class="mb-4" pardot-region="contact-footer-info" pardot-region-type="basic"><p style="text-align:center;">In this Basic region ("wysiwyg-lite"), text can be edited to explaining the purpose of the form, or one last call to action. This form does require an Account Engagement Form Handler URL to be utilized, which would be placed inside the "campaign-form-handler-url" region Currently, the action defaults to "#".</p></div>
                 </div>
                 <div class="col-10 mx-auto pt-3">
                     <div id="contact-form-url" pardot-region="campaign-form-handler-url" pardot-region-type="html">
@@ -660,8 +683,8 @@
                 </div>
                 <div class="modal-body py-2">
                     <h2 class="h6">To access the content, please submit this form:</h2>
-                    <code>%%content%%</code>
-                    <p>In Account Engagement, placing <code>%%content%%</code> in your template will render the associated form.</p>
+                    <code>%%content%%</code><br/>
+                    <p>In Account Engagement, placing <code>%%content%%</code> in your template will render the associated form. This text is demonstrative.</p>
                 </div>
             </div>
         </div>
