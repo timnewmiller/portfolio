@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>%%title%%</title>
+    <title>Corporate Campaign Overview Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="campaigns.css">
@@ -152,7 +152,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 text-center mb-5">
-                    <h2>Why Pick LECO?</h2>
+                    <h2>Why Pick Company?</h2>
                     <div pardot-region="purpose" pardot-region-type="pardot">WYSIWYG editor for unique selling propositions</div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
                     <div pardot-region="webinar-text" pardot-region-type="pardot">
                         <h2>Webinar Tease Content</h2>
                         <p>WYSIWYG editor for optional campaign content. Content-type not specified, but layout provided for ease of generation.</p>
-                        <a href="https://www.google.com" class="btn btn-secondary locked">Access this content</a>
+                        <a href="campaign-webinar.html" class="btn btn-secondary unlocked">Access this content</a>
                     </div>
                 </div>
                 <div class="col-10 col-md-4 col-lg-5 order-md-2 order-1">
@@ -862,6 +862,16 @@
         });
     }
 
+    function freeAccess() {
+        document.querySelectorAll('.unlocked').forEach(button =>{
+            button.removeAttribute('data-bs-toggle');
+            button.removeAttribute('data-original-url');
+            button.removeAttribute('data-bs-target');
+            button.classList.remove('btn-secondary', 'locked', 'available');
+            button.classList.add('btn', 'btn-primary');
+        });
+    }
+
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
@@ -900,6 +910,7 @@
         lockDocuments('.locked');
 
         initializeDocumentAccess(); 
+        freeAccess();
 
         const formModal = document.getElementById('formModal');
         formModal.addEventListener('hidden.bs.modal', cleanupModal);
