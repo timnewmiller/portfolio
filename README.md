@@ -17,4 +17,4 @@ This layout built with HTML, CSS, JavaScript, for integration into Salesforce Ac
 
 This still-in-development web application is intended for personal use, to facilitate home organization. The user is able to create lists and add or remove items. When saved, a QR code is generated to the list. A user could, if desired, print out the list QR codes and attach to storage containers, giving a quick method to recall stored items. The code is available for perusal, and a sample layout is available. Due to reliance of PHP and several libraries for execution, it is nonfunctional in github.
 
-<a href="inventory/index.html">View Inventory Manager Interface</a> (<a href="https://github.com/timnewmiller/portfolio/blob/main/campaign-template.html">View Code</a>)
+<a href="inventory/index.html">View Inventory Manager Interface</a> (<a href="https://github.com/timnewmiller/portfolio/tree/main/inventory">View Code</a>)
