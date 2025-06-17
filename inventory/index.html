@@ -23,7 +23,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<form id="itemForm" class="container mt-5" action="save-data.php" method="POST">
+<form id="itemForm" class="container mt-5" action="#" method="POST" onsubmit="showDemoMessage(); return false;">
   <div class="card">
     <div class="card-body">
       <h2 class="card-title mb-4">Item Inventory Manager</h2>
@@ -67,8 +67,21 @@
   </div>
 </form>
 
-<div id="qrContainer" class="container mt-4"></div>
+          
 
+<div id="qrContainer" class="container mt-4"></div>
+  <div id="formsubmitconfirm" class="alert alert-info" role="alert" style="display:none;">
+      <h3>Demonstration Mode</h3>
+      <p>This is a static demonstration of the Inventory Manager. The form submission functionality has been disabled.</p>
+      <p>If this were a live application, clicking "Save List" would:</p>
+      <ul>
+          <li>Persist your list and item data to a database.</li>
+          <li>Generate a unique QR code for easy access to your inventory.</li>
+          <li>Provide a summary of changes made (new items, updated quantities, deleted items).</li>
+      </ul>
+      <p>You can review the source code on GitHub to see the backend logic for data saving and QR code generation.</p>
+      <a href="https://github.com/timnewmiller/portfolio/inventory" class="btn btn-primary mt-3" target="_blank">View on GitHub</a>
+  </div>
         </div>
 
       </div>
@@ -115,12 +128,17 @@
         }
 
 
+      function showDemoMessage() {
+    const demoMessageDiv = document.getElementById('formsubmitconfirm');
+    
+    demoMessageDiv.style.display = 'block'; // Make the message visible
+    // You might also want to scroll to the message or disable the form further
+    document.getElementById('formsubmitconfirm').querySelector('button[type="submit"]').setAttribute('disabled', 'true');
+}
+
     </script>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
 
   </body>
 </html>
