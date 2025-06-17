@@ -1,9 +1,8 @@
 <?php
 
 require_once 'config.php';
-require 'vendor/autoload.php';
-
-use Ramsey\Uuid\Uuid;
+//require 'vendor/autoload.php';
+//use Ramsey\Uuid\Uuid;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $list_name = $_POST['listName'];
             // Insert new list into database
-            $list_url = Uuid::uuid4()->toString();
+            $list_url = uniqid();
             $stmt = $pdo->prepare("INSERT INTO lists (list_name, list_url) VALUES (?, ?)");
             $stmt->execute([$list_name, $list_url]);
             $selected_list_id = $pdo->lastInsertId();
@@ -105,18 +104,13 @@ if (!empty($_POST['itemName'])) {
             $output .= "</ul>";
         }
 
-        // Prepare data for QR code
-      require_once 'phpqrcode/qrlib.php';
-      $url = 'https://timranosaur.us/inventory/?selected='.$selected_list_id;
+       // Prepare data for QR code
+          // require_once 'phpqrcode/qrlib.php';
+          $url = '/inventory/?selected='.$selected_list_id;
         
-        $path = 'images/';
-        $file = $path.'code-'.$selected_list_id.'.png';
-
-        $ecc = 'L'; 
-        $pixel_Size = 10; 
-        $frame_Size = 10; 
-
-        QRcode::png($url, $file, $ecc, $pixel_Size, $frame_Size); 
+       // Instead of generating a file, just state that it would be created
+        $qr_output_message = "<p class='mt-4'>QR Code for this list would be generated, linking to: <br/><code>" . htmlspecialchars($url) . "</code></p>";
+        $qr_image_html = "<div class='alert alert-info'>QR Code would appear here.</div>"; // Placeholder
 
         ?>
         
@@ -126,14 +120,15 @@ if (!empty($_POST['itemName'])) {
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <title>286 Digital Storage</title>
+            <title>Digital Inventory Program</title>
         </head>
          <main class="container mt-5">
             <div class="row">
                 <div class="col-12 col-md-9 col-lg-6 mx-auto text-center">
                 <?php 
                     echo '<h1>QR Code for <br/><span class="fw-bold">' .$list_name. '</span></h1>';
-                    echo '<img src="'. $file .'">';
+                     echo $qr_image_html; // Display the placeholder
+                     echo $qr_output_message; // Display the message
                     echo '</div>';
                     echo '<div class="col-12 col-md-9 col-lg-6 mx-auto text-left">';
                     echo '<div class="text-left">'. $output .'</div>';
