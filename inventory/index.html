@@ -63,6 +63,9 @@
         <button type="button" class="btn btn-primary" onclick="addItem()">(+) item</button>
         <button type="submit" class="btn btn-success">Save List</button>
       </div>
+
+      <div id="demoMessage" class="alert alert-info mt-4" role="alert" style="display:none;">
+            </div>
     </div>
   </div>
 </form>
@@ -123,19 +126,24 @@
             container.appendChild(row);
         }
 
-        function removeItem(button) {
-            button.closest('.item-row').remove();
-        }
-
-
       function showDemoMessage() {
-    const demoMessageDiv = document.getElementById('formsubmitconfirm');
-    
-    demoMessageDiv.style.display = 'block'; // Make the message visible
-    // You might also want to scroll to the message or disable the form further
-    document.getElementById('formsubmitconfirm').querySelector('button[type="submit"]').setAttribute('disabled', 'true');
-}
-
+        const demoMessageDiv = document.getElementById('demoMessage');
+        demoMessageDiv.innerHTML = `
+            <h3>Demonstration Mode</h3>
+            <p>This is a static demonstration. The form submission functionality is disabled.</p>
+            <p>If this were a live application, clicking "Save List" would:</p>
+            <ul>
+                <li>Persist your list and item data to a database.</li>
+                <li>Generate a unique QR code for easy access to your inventory.</li>
+                <li>Provide a summary of changes made (new items, updated quantities, deleted items).</li>
+            </ul>
+            <p>Check the source code on GitHub for backend logic.</p>
+            <a href="https://github.com/YourGitHubUsername/YourRepoName" class="btn btn-primary mt-3" target="_blank">View on GitHub</a>
+        `;
+        demoMessageDiv.style.display = 'block'; // Make the message visible
+        // You might also want to scroll to the message or disable the form further
+        document.getElementById('itemForm').querySelector('button[type="submit"]').setAttribute('disabled', 'true');
+    }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
