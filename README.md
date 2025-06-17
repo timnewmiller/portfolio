@@ -3,7 +3,7 @@
 Please explore code examples.
 
 - "<a href="#campaign-template">Marketing Campaign Template</a>"
-- - "<a href="#inventory-manager">Inventory Manager</a>"
+- "<a href="#inventory-manager">Inventory Manager</a>"
 
 
 ## Campaign Template
