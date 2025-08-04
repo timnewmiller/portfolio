@@ -77,14 +77,19 @@
     </ul>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your@email.com">your@email.com</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/in/tim-newmiller-35b13a11b/">Tim Newmiller</a></p>
-  </section>
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <span id="email"></span><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/tim-newmiller-35b13a11b/">Tim Newmiller</a></p>
+    </section>
 
     </div>
- 
+    <script>
+          const user = "tim";
+          const domain = "tad2.com";
+          document.getElementById("email").innerHTML =
+          `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+    </script>
   
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
