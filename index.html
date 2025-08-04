@@ -4,30 +4,76 @@
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tim Newmiller | Web Portfolio</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unica+One&display=swap" rel="stylesheet">
+  
   <style>
-    body { font-family: sans-serif; padding: 2rem; max-width: 800px; margin: auto; }
+    /*Background	#fafafa (off-white)	Light mode, easy on the eyes
+    Text	#2c2c2c (dark charcoal)	Better than true black
+    Primary	#d33682 (magenta-pink)	Bold, like a rebellious accent color
+    Secondary	#268bd2 (bright denim blue)	Balanced contrast to the magenta
+    Accent	#859900 (citron-lime)	Adds fresh weirdness (optional, used sparingly)
+    Link hover	Darker tone of primary or underline	*/
+    body { font-family: "Inter", sans-serif; padding: 2rem; max-width: 800px; margin: auto; color:#2c2c2c; background:#fafafa; }
+    a {color: #268bd2; }
     header, section { margin-bottom: 2rem; }
-    h1, h2 { color: #333; }
+    h1, h2, h3 { font-family: "Unica One", sans-serif; font-weight:700; font-style:normal; }
+    h1, .card span {color:#d33682;}
+    .card img{border-bottom:2px solid #859900;}
+    .card {border-color:#859900;}
   </style>
 </head>
-<body>
-  <header>
-    <h1>Tim Newmiller</h1>
-    <p>Web Designer & Developer | Accessibility Advocate | Content Architect</p>
-  </header>
-
-  <section>
+<body class="container">
+     
+    <div class="row col-md-7">
+        <header>
+        <h1>Tim Newmiller</h1>
+        <p>Web Designer & Developer | Accessibility Advocate | Content Architect</p>
+    </header>
+        <section>
     <h2>About Me</h2>
-    <p>I build accessible, scalable websites using clean code and content architecture principles. My background spans WordPress, database management, and UX-focused site design.</p>
+    <p>I'm a web designer and developer with a focus on accessibility, custom WordPress development, and content structure. I love building scalable, efficient sites, through clean code and clean databases. My background includes front-end design, WordPress theming, and large-scale content management.</p>
   </section>
 
   <section>
     <h2>Portfolio</h2>
-    <ul>
-      <li><strong>michiganmarching.com</strong> – Custom WordPress site with structured content and mobile-first design</li>
-      <li><strong>leco.com</strong> – Original WordPress site architecture with custom templates and fields</li>
-      <li><strong>Colson Group USA</strong> – Site & product data management for multiple WordPress installs</li>
+    <div class="card mb-4">
+        <img src="michiganmarchingwebsite-screenshot.webp" class="card-img-top" alt="Screenshot of Michigan Marching website" title="Jenison Bands profile from michiganmarching.com">
+        <div class="card-body">
+            <h3>michiganmarching.com</h3>
+            <span>Web Designer & Developer</span>
+            <p class="card-text">A fully custom WordPress site built for the Michigan Marching Band community, emphasizing a streamlined UX, mobile responsiveness, and fast-loading event listings. Built with custom post types, fields, and templates to handle structured content cleanly and scalably.</p>
+        </div>
+    </div>
+     <div class="card mb-4">
+        <img src="lecowebsite-screenshot.webp" class="card-img-top" alt="Screenshot of LECO Corporation website" title="LECO Corporation website header with Pegasus BTX hero video">
+        <div class="card-body">
+            <h3>leco.com</h3>
+            <span>WordPress Developer / Site Architect; Project Manager</span>
+            <p class="card-text mt-3">Originally built a custom WordPress site with a strong emphasis on modular content architecture using custom fields and page templates. The site has since transitioned to a builder-based workflow, but the foundation and information architecture remain from my original structure.</p>
+        </div>
+    </div>
+     <div class="card mb-4">
+        <img src="colsongroup-shepherd-screenshot.webp" class="card-img-top" alt="Screenshot of Shepherd Casters website" title="Shepherd Casters is one of eight websites managed at Colson Group USA">
+        <div class="card-body">
+            <h3>colsongroupusa.com</h3>
+            <span>Web Manager & Data Specialist</span>
+            <p class="card-text">Oversaw large-scale content and database operations for Colson Group USA and seven caster brands. Managed complex product data, collaborated on multisite WordPress and eCommerce integrations, and supported cross-functional teams with backend and user-facing updates.</p>
+        </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul><li>HTML/CSS/JS</li>
+        <li>WordPress (custom themes, ACF, CPTs, Divi Builder)</li>
+        <li>Bootstrap</li>
+        <li>Database & content structuring</li>
+        <li>Accessibility best practices (WCAG)</li>
+        <li>Git/GitHub</li>
+        <li>Project & stakeholder communication</li>
     </ul>
   </section>
 
@@ -36,6 +82,10 @@
     <p>Email: <a href="mailto:your@email.com">your@email.com</a><br>
     LinkedIn: <a href="https://www.linkedin.com/in/tim-newmiller-35b13a11b/">Tim Newmiller</a></p>
   </section>
+
+    </div>
+ 
+  
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
